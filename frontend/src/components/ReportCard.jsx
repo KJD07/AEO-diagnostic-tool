@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SiteAudit from "./SiteAudit.jsx";
 
 const ENGINES = [
   { key: "groq", label: "Groq (Llama 3.3)", color: "var(--gpt)", bg: "#10a37f18", icon: "🤖" },
@@ -65,7 +66,7 @@ function MentionBadge({ mentioned, rank, sentiment }) {
   );
 }
 
-export default function ReportCard({ result, onReset }) {
+export default function ReportCard({ result, onReset, auditResult, auditProgress, auditLoading }) {
   const [activeTab, setActiveTab] = useState("overview");
   const { query, brand, competitors, analysis, timestamp } = result;
   const { engines, overallScores, insights } = analysis;
@@ -179,6 +180,7 @@ export default function ReportCard({ result, onReset }) {
           { id: "overview", label: "Engine Breakdown" },
           { id: "responses", label: "Raw AI Responses" },
           { id: "insights", label: "Insights & Tips" },
+          ...(auditResult || auditLoading ? [{ id: "siteaudit", label: `Site Audit${auditLoading && !auditResult ? " ⏳" : ""}` }] : []),
         ].map((tab) => (
           <button
             key={tab.id}
@@ -310,6 +312,11 @@ export default function ReportCard({ result, onReset }) {
             </div>
           )}
         </div>
+      )}
+
+      {/* Tab: Site Audit */}
+      {activeTab === "siteaudit" && (
+        <SiteAudit auditResult={auditResult} auditProgress={auditProgress} auditLoading={auditLoading} />
       )}
 
       {/* Leaderboard summary */}

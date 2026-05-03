@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SiteAuditForm } from "./SiteAudit.jsx";
 
 const EXAMPLE_QUERIES = [
   { query: "best magnesium supplement for seniors", brand: "Nature Made", competitors: ["NOW Foods", "Thorne", "Garden of Life"] },
@@ -11,6 +12,7 @@ export default function DiagnosticForm({ onSubmit }) {
   const [brand, setBrand] = useState("");
   const [competitorInput, setCompetitorInput] = useState("");
   const [competitors, setCompetitors] = useState([]);
+  const [domain, setDomain] = useState("");
 
   const addCompetitor = () => {
     const c = competitorInput.trim();
@@ -32,7 +34,7 @@ export default function DiagnosticForm({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!query.trim() || !brand.trim()) return;
-    onSubmit({ query: query.trim(), brand: brand.trim(), competitors });
+    onSubmit({ query: query.trim(), brand: brand.trim(), competitors, domain: domain.trim() });
   };
 
   return (
@@ -162,6 +164,15 @@ export default function DiagnosticForm({ onSubmit }) {
               )}
             </Field>
           </div>
+
+          <Field label="Your Website (optional)" hint="Enables full site AEO audit alongside the brand diagnostic">
+            <input
+              value={domain}
+              onChange={(e) => setDomain(e.target.value)}
+              placeholder="e.g. notion.so or https://notion.so"
+              style={inputStyle}
+            />
+          </Field>
 
           <button
             type="submit"
