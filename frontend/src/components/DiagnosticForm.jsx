@@ -59,7 +59,7 @@ export default function DiagnosticForm({ onSubmit }) {
           <span style={{ color: "var(--accent)" }}>across AI engines?</span>
         </h1>
         <p style={{ color: "var(--text2)", fontSize: 17, maxWidth: 560, margin: "0 auto", lineHeight: 1.6 }}>
-          Type any shopping query. We'll ask GPT-4o, Claude, and Gemini — then score how your brand ranks vs. competitors.
+          Type any shopping query. We'll ask Groq, OpenRouter, and Gemini — then score how your brand ranks vs. competitors.
         </p>
       </div>
 
@@ -194,7 +194,7 @@ export default function DiagnosticForm({ onSubmit }) {
       {/* How it works */}
       <div style={{ marginTop: 48, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
         {[
-          { icon: "🔍", title: "Query 3 AI engines", desc: "Simultaneously asks GPT-4o, Claude Sonnet, and Gemini Flash the same question" },
+          { icon: "🔍", title: "Query 3 AI engines", desc: "Simultaneously asks Groq (Llama 3.3 70B), OpenRouter, and Gemini Flash the same question" },
           { icon: "📊", title: "Analyze brand mentions", desc: "Detects if your brand appears, its rank position, and sentiment in each AI response" },
           { icon: "📋", title: "Generate report card", desc: "Scores your AEO visibility 0-100 with competitor benchmarks and improvement tips" },
         ].map((item) => (

@@ -1,7 +1,7 @@
 export default function ProgressPanel({ progress, rawResponses }) {
   const engines = [
     { key: "groq", label: "Groq (Llama 3.3)", color: "var(--gpt)", icon: "⚡" },
-    { key: "openrouter", label: "OpenRouter (Mistral)", color: "var(--claude)", icon: "🔀" },
+    { key: "openrouter", label: "OpenRouter (Nemotron)", color: "var(--claude)", icon: "🔀" },
     { key: "gemini", label: "Gemini Flash", color: "var(--gemini)", icon: "✨" },
   ];
 

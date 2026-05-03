@@ -3,7 +3,7 @@ import SiteAudit from "./SiteAudit.jsx";
 
 const ENGINES = [
   { key: "groq", label: "Groq (Llama 3.3)", color: "var(--gpt)", bg: "#10a37f18", icon: "🤖" },
-  { key: "openrouter", label: "OpenRouter (Mistral)", color: "var(--claude)", bg: "#d9770618", icon: "🧠" },
+  { key: "openrouter", label: "OpenRouter (Nemotron)", color: "var(--claude)", bg: "#d9770618", icon: "🧠" },
   { key: "gemini", label: "Gemini Flash", color: "var(--gemini)", bg: "#4285f418", icon: "✨" },
 ];
 

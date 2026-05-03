@@ -33,7 +33,7 @@ async function queryGroq(query, brand, competitors) {                           
   const response = await groqClient.chat.completions.create({
     model: "llama-3.3-70b-versatile",
     messages: [{ role: "user", content: buildPrompt(query, brand, competitors) }],  // CHANGED: pass brand, competitors
-    max_tokens: 600,
+    max_tokens: 1200,
   });
   return response.choices[0].message.content;
 }
@@ -41,9 +41,9 @@ async function queryGroq(query, brand, competitors) {                           
 // ─── Query OpenRouter (Qwen3) ─────────────────────────────────────────────────
 async function queryOpenRouter(query, brand, competitors) {                     // CHANGED: added brand, competitors params
   const response = await openRouterClient.chat.completions.create({
-    model: "qwen/qwen3-30b-a3b-instruct",  // change to any model from openrouter.ai/models
+    model: "nvidia/nemotron-3-super-120b-a12b:free",  // change to any model from openrouter.ai/models
     messages: [{ role: "user", content: buildPrompt(query, brand, competitors) }],  // CHANGED: pass brand, competitors
-    max_tokens: 600,
+    max_tokens: 1200,
   });
   return response.choices[0].message.content;
 }

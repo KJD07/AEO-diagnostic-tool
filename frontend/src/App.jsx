@@ -159,8 +159,8 @@ function Header() {
         display: "flex", gap: 8, alignItems: "center",
         fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--text3)",
       }}>
-        <EnginePill label="GPT-4o" color="var(--gpt)" />
-        <EnginePill label="Claude" color="var(--claude)" />
+        <EnginePill label="Groq" color="var(--gpt)" />
+        <EnginePill label="OpenRouter" color="var(--claude)" />
         <EnginePill label="Gemini" color="var(--gemini)" />
       </div>
     </header>
@@ -202,7 +202,7 @@ function Footer() {
       textAlign: "center", fontFamily: "var(--font-mono)", fontSize: 11,
       color: "var(--text3)",
     }}>
-      AEO Diagnostic — Answer Engine Optimization · Powered by GPT-4o, Claude Sonnet & Gemini Flash
+      AEO Diagnostic — Answer Engine Optimization · Powered by Groq (Llama 3.3 70B), OpenRouter & Gemini Flash
     </div>
   );
 }
